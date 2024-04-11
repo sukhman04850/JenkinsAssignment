@@ -1,0 +1,21 @@
+[
+  {
+    "ProductId": "2a16e3d3-e053-44d1-8563-1717815d690f",
+    "Name": "Mango",
+    "Price": 19.99,
+    "Details": "Good Mango Fruit must for mango lovers"
+  },
+  {
+    "ProductId": "419bd82b-bdbc-47fb-9d71-1e622cea7d58",
+    "Name": "Strawberry",
+    "Price": 99.90,
+    "Details": "Strawberries are sweet"
+  },
+  {
+    "ProductId": "3ca6f957-2c5f-44af-a24f-656b2b9cc4c5",
+    "Name": "Guava",
+    "Price": 20.00,
+    "Details": "Guava is in season must buy"
+  }
+
+]
