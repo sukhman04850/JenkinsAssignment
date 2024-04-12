@@ -4,7 +4,7 @@ agent any
 
 environment {
 
-    IMAGE_NAME='ssk1811/jenkinstrial'
+    IMAGE_NAME='ssk1811/productmicroservice'
 
     IMAGE_TAG='latest'
 
@@ -17,7 +17,7 @@ steps {
 
 
 checkout scm
-//git 'https://github.com/sukhman04850/JenkinsTrial.git'
+
 
 }
 
@@ -68,7 +68,7 @@ steps {
 
 script{
 sh 'docker rm -f ${IMAGE_NAME} || true '
-    sh "docker run -d --name devops -p 8000:80 ${IMAGE_NAME}:${IMAGE_TAG}"
+    sh "docker run -d --name devopsassignment -p 1811:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
 }
 
 }
