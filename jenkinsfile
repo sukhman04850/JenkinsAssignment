@@ -36,6 +36,18 @@ sh 'dotnet build'
 }
 
 }
+stage('SonarQube Analysis') {
+            environment {
+                scannerHome = tool 'qube'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sq1') {
+                       sh "sonar-scanner"
+                    }
+                }
+            }
+        }
 
 stage('Docker Build'){
 steps{
