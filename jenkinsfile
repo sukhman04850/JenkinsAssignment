@@ -43,7 +43,9 @@ stage('SonarQube Analysis') {
             steps {
                 script {
                     withSonarQubeEnv('sq1') {
-                       sh "sonar-scanner"
+                        sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"jenkins-trial\""
+                        sh "dotnet build"
+                        sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
                     }
                 }
             }
