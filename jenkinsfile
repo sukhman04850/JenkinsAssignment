@@ -36,7 +36,20 @@ sh 'dotnet build'
 }
 
 }
-
+stage('SonarQube Analysis') {
+            environment {
+                scannerHome = tool 'qube'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('sq1') {
+                        sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll begin /k:\"jenkins-trial\""
+                        sh "dotnet build"
+                        sh "dotnet ${scannerHome}/SonarScanner.MSBuild.dll end"
+                    }
+                }
+            }
+        }
 
 stage('Docker Build'){
 steps{
