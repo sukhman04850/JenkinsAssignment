@@ -9,13 +9,13 @@ namespace Products_Microservice.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepositoryBL _repository;
-        private readonly IProductRepository _repositorynew;
+       
         private readonly ILogger<ProductController> _logger;
-        public ProductController(IProductRepositoryBL repository, ILogger<ProductController> logger, IProductRepository repositorynew)
+        public ProductController(IProductRepositoryBL repository, ILogger<ProductController> logger)
         {
             _repository = repository;
             _logger = logger;
-            _repositorynew = repositorynew;
+            
         }
         [HttpPost("AddProducts")]
         public async Task<IActionResult> AddProduct(ProductsDTO product)

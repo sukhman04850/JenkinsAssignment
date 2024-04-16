@@ -19,11 +19,11 @@ namespace Products_Microservice.Repository
 
         }
 
-        public async Task<bool> DeleteProduct(Guid productId)
+        public async Task<bool> DeleteProduct(Guid id)
         {
             List<Products> existingProducts = await ReadProductsFromFile();
 
-            var productToRemove = existingProducts.FirstOrDefault(x => x.ProductId == productId);
+            var productToRemove = existingProducts.FirstOrDefault(x => x.ProductId == id);
 
             if (productToRemove != null)
             {
