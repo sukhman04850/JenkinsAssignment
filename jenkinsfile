@@ -81,8 +81,7 @@ stage('Run container') {
 steps {
 
 script{
-sh 'docker stop devopsassignment '
- sh'docker rm devopsassignment'
+sh 'docker rm -f devopsassignment || true '
     sh "docker run -d --name devopsassignment -p 1811:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
 }
 
